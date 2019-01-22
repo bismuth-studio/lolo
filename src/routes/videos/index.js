@@ -1,63 +1,16 @@
 import { h, Component } from 'preact';
-import axios from 'axios'
+import style from './style';
+import Videos from '../../components/videos';
 import { Link } from 'preact-router/match';
+export default class Home extends Component {
 
-import ReactPlayer from 'react-player'
-import Helmet from "preact-helmet";
-const PAGES = 'https://api.lolozouai.com/videos/videos.json';
-
-export default class Videos extends Component {
-	state = {
-		shows: [],
-		showsLoaded: false,
-	};
-
-	componentDidMount() {
-		axios.get(PAGES)
-		.then(response => this.setState({shows: response.data.records || [], showsLoaded: true}))
-		.then(this.timer = setInterval(() => this.socet(), 5000))
-	}
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  socet = () => {
-		axios.get(PAGES)
-		.then(response => {
-			if (this.state.shows.length !== response.data.records.length) {
-				this.setState({shows: response.data.records})
-			}
-		})
-  }
-
-	render({ }, { shows, showsLoaded }) {
-		return (
-			<div class="page videos">
-
-
-				{showsLoaded
-					? shows.length
-					  ? <div >
-						<Helmet
-   htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
-	 title="Shop"
-		titleTemplate="Lolo Zouaï - %s" />
-							{shows.map((show, i) =>
-							<div class="col-4 p1 left">
-							<h3>{show.fields.title}</h3>
-
-					  	  <Link class="videoOverlay" to={`/videos/${show.fields.slug}`} key={i}>
-					  	  <img src={`https://img.youtube.com/vi/${show.fields.yt_id}/maxresdefault.jpg`} />
-
-								</Link>
-								</div>
-						    )}
-					    </div>
-					  : <div>Ooops, no videos.</div>
-				  : <div class="loading">Loading videos...</div>
-				}
+	render() {
 	
+		return (
+			<div class="video">
+		<Videos />
+
+				
 			</div>
 		);
 	}

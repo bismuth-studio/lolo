@@ -9,7 +9,7 @@
     "build": "preact build --no-prerender",
     "serve": "preact build --no-prerender  && preact serve",
     "dev": "preact watch"
-    },
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

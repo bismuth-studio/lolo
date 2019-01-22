@@ -4,7 +4,7 @@ import { Link } from 'preact-router/match';
 
 import ReactPlayer from 'react-player'
 import Helmet from "preact-helmet";
-const PAGES = '/assets/api/videos.json';
+const PAGES = 'https://auxcorde.fodaco.de/wp-json/wp/v2/video';
 
 export default class Videos extends Component {
 	state = {
@@ -14,7 +14,7 @@ export default class Videos extends Component {
 
 	componentDidMount() {
 		axios.get(PAGES)
-		.then(response => this.setState({shows: response.data.records || [], showsLoaded: true}))
+		.then(response => this.setState({shows: response.data || [], showsLoaded: true}))
 		.then(this.timer = setInterval(() => this.socet(), 5000))
 	}
 
@@ -23,10 +23,10 @@ export default class Videos extends Component {
   }
 
   socet = () => {
-		axios.get(PROXY+PAGES)
+		axios.get(PAGES)
 		.then(response => {
-			if (this.state.shows.length !== response.data.records.length) {
-				this.setState({shows: response.data.records})
+			if (this.state.shows.length !== response.data.length) {
+				this.setState({shows: response.data})
 			}
 		})
   }
@@ -43,13 +43,13 @@ export default class Videos extends Component {
    htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
 	 title="Videos"
 		titleTemplate="Lolo Zouaï - %s" />
-							{shows.map((show, i) =>
+							{shows.filter(video => video.acf.type === "official").map((video, i) =>
 							<div class="col-4 p1 left">
-							<h3>{show.fields.title}</h3>
-
-					  	  <Link class="videoOverlay" href={`/video/${show.fields.slug}`} key={i}>
-					  	  <img src={`https://img.youtube.com/vi/${show.fields.yt_id}/maxresdefault.jpg`} />
-
+								<div dangerouslySetInnerHTML={{ __html: video.title.rendered }} />
+						
+					  	  <Link class="videoOverlay" href={`/video/${video.acf.slug}`} key={i}>
+					  	  <img src={`https://img.youtube.com/vi/${video.acf.id}/maxresdefault.jpg`} />
+								
 								</Link>
 								</div>
 						    )}

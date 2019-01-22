@@ -1,17 +1,25 @@
 import { h, Component } from 'preact';
 import { Router, route } from 'preact-router';
+
+// -- ./componenets
+
 import Header from './header';
+
 import Home from '../routes/home';
-import Profile from '../routes/profile';
-import Shop from '../routes/merch';
-import Item from '../routes/merch-item';
+
+import Merch from '../routes/merch';
+import MerchItem from '../routes/merch-item';
+
 import Shows from '../routes/shows';
+
 import Video from '../routes/video';
 import Videos from '../routes/videos';
+
+// -- *3rdparty
+
 import ShopifyBuy from 'shopify-buy'
 import Helmet from "preact-helmet";
-import Peep from '../routes/peep';
-import Peeps from '../routes/people';
+
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
@@ -40,16 +48,22 @@ export default class App extends Component {
 			  <Helmet
               htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
 			  title="Home"
-			  
-               titleTemplate="Lolo Zouaï - %s" />
+			  titleTemplate="Lolo Zouaï - %s" />
+
 				<Header url={this.state.currentUrl} goToMerch={this.goToMerch} />
+
 				<Router onChange={this.handleRoute}>
+
 					<Home path="/" />
+
 					<Shows path="/shows" />
-					<Shop path="/merch"  key="product" />
-					<Item key="variant" path="/merch/:handle" />
-					<Peeps path="/videos" />
-					<Peep path="/video/:id" />
+
+					<Merch path="/merch"  key="product" />
+					<MerchItem key="variant" path="/merch/:handle" />
+
+					<Videos path="/videos" />
+					<Video path="/video/:id" />
+
 				</Router>
 			</div>
 		);

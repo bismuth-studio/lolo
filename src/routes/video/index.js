@@ -1,102 +1,61 @@
 import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
-
 import axios from 'axios'
+import Videos from '../../components/videos';
 import ReactPlayer from 'react-player'
-import Videos from '../videos'
-import Helmet from "preact-helmet";
-const PAGES = 'https://api.lolozouai.com/videos/videos.json';
+import { Link } from 'preact-router/match'
 
-export default class Video extends Component {
+
+const PAGES = 'https://auxcorde.fodaco.de/wp-json/wp/v2/video';
+
+export default class Single extends Component {
 	state = {
-		show: {},
-		showLoaded: false,
-		shows: [],
-		number: ''
+		single: {},
+		singleLoaded: false,
+		singles: []
 	};
 
 	componentDidMount() {
-		this.updateInfo(this.props)
 		axios.get(PAGES)
 		.then(response => this.setState({
-			show: response.data.records.find(show => show.fields.slug === this.props.match.params.id) || {},
-			showLoaded: true,
-			shows: response.data.records || [],
-			number: response.data.records.indexOf(response.data.records.find(show => show.fields.slug === this.props.match.params.id))
+			singles: response.data,
+			single: response.data.filter(single => single.acf.type === "official").find(single => single.acf.video_slug === this.props.id) || {},
+			singleLoaded: true
 		}))
+
+		document.removeEventListener('keydown', this.handleKeyPress)
+	}
+	componentWillUnmount() {
+		document.removeEventListener('keydown', this.handleKeyPress)
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if (this.props.match.params.id !== nextProps.match.params.id) {
-			this.setState({showLoaded: false})
-			this.updateInfo(nextProps)
-	    axios.get(PAGES)
-			.then(response => this.setState({
-				show: response.data.records.find(show => show.fields.slug === nextProps.match.params.id) || {},
-				number: response.data.records.indexOf(response.data.records.find(show => show.fields.slug === nextProps.match.params.id)),
-				showLoaded: true
-			}))
-		}
-	}
 
-	updateInfo = (prop) => {
-		axios.get(PAGES)
-		.then(response => this.setState({
-			show: response.data.records.find(show => show.fields.slug === prop.match.params.id) || {},
-			number: response.data.records.indexOf(response.data.records.find(show => show.fields.slug === prop.match.params.id)),
-			shows: response.data.records || [],
-			showLoaded: true
-		}))
-	}
 
-	render({}, { shows, number, show, showLoaded }) {
-		const prev = ((number - 1) % shows.length == -1) ? (shows.length - 1) : ((number - 1) % shows.length)
-		const next = (number + 1) % shows.length;
+
+	render({id}, { singles, single, singleLoaded }) {
+
 		return (
-			<div class="page video" key={show.id}>
-		<div class="pageBg"></div>
-				{showLoaded
-					? Object.keys(show).length
-					  ? <div class="videoWrapper">
-					  <Helmet
-
-		   title={show.fields.title}
-
-	   />
-
-
-					  <ReactPlayer  url={show.fields.link} playing />
+			<div>
+	
+<div class="col-12 left vid">
+				{singleLoaded
+					? Object.keys(single).length
+					  ? <div class="single" key={single.acf.id}>
 					 
-						  <br/>
-						  <div class="clearfix"></div>
-					  <div class="catalogControls">
-	
-		<div class="prev col-6 left btn">
-		<Link to={'/videos/'+ shows[prev].fields.slug }>←</Link>
-					</div>
-
-					<div class="next col-6 left  btn" >
-					<Link to={'/videos/'+ shows[next].fields.slug }>→</Link>
-					</div>
-<br />
-					<div class="back" >
-					  	<Link to="/videos" style="color: #f96600;">
-					  		back to all
-					  	</Link>
-						  </div>
+					 <ReactPlayer  class="videoWrapper" url={single.acf.url} playing />
 			
-				</div>
-				
-				<h1 class="videoTitle">
-					  	{show.fields.title}	  </h1>
-	
-			
-					  </div>
-					  : <div>Ooops, no video with this id.</div>
-				  : <div class="loading"></div>
-				}
-
-
+								   </div>
+					
+						   
+					  : <div>Ooops, no single with this id.</div>
+				  : <div class="fixed center loading"><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/05/main-qimg-a9a6c8ccb7c798ff67413118220c7bc3.png" /></div>
+				}<div class="clearfix"></div>
+					<br />
+					{/* <div class="col-12 left ">	
+					<Videos />
+					</div> */}
+					</div>	
+					<div class="clearfix"></div>
+					<br /><br /><br />
 			</div>
 		);
 	}
