@@ -85,6 +85,14 @@ span.sold {
 }
 
 
+@media only screen and (max-width:40em) {
+
+  span.sold{
+    font-size: 10px;
+  }
+}
+
+
 footer a {
    font-size:12px;
 }
@@ -3063,6 +3071,8 @@ text-align:center;
   left: 0;
   width: 240px;
   margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .videos .col-4 {
