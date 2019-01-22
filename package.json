@@ -1,0 +1,40 @@
+{
+  "name": "lolozouai.com",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src && preact test",
+    "start": "if-env NODE_ENV=production && npm run serve build -s || npm run -s dev",
+    "build": "preact build --no-prerender",
+    "serve": "preact build --no-prerender  && preact serve",
+    "dev": "preact watch"
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.0",
+    "eslint-config-synacor": "^3.0.0",
+    "if-env": "^1.0.4",
+    "preact-cli": "^2.1.3"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "pimg": "^1.0.0-alpha.2",
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0",
+    "preact-helmet": "^4.0.0-alpha-3",
+    "preact-router": "^2.6.0",
+    "preact-waypoint": "^1.0.7",
+    "react-id-swiper": "^1.6.1",
+    "react-player": "^1.6.1",
+    "react-scroll": "^1.7.6",
+    "shopify-buy": "^1.6.0",
+    "tinydate": "^1.0.0",
+    "whatwg-fetch": "^2.0.3"
+  }
+}
