@@ -27,9 +27,9 @@ export default class Shows extends Component {
 	};
 
 	componentDidMount() {
-		window.addEventListener('scroll', this.handleScroll);	
+		window.addEventListener('scroll', this.handleScroll);
 		axios.get(PAGES2).then(response => this.setState({shows2: response.data.records || [], shows2Loaded: true}))
-		
+
 	}
 
 	render({ }, { shows, showsLoaded, shows2, shows2Loaded }) {
@@ -49,10 +49,10 @@ export default class Shows extends Component {
 </div>
 <div class="clearfix"></div>
 				{shows2Loaded
-					? shows2.length 
+					? shows2.length
 					  ? <div class="a3col"> {shows2.map((show, i) =>
 					<div>
-						{ show.fields.sold === true 
+						{ show.fields.sold === true
   ? <div class="soldout"><div>	<div class="dateItem" key={i}>
 	<a href={show.fields.link} target="_blank">
 	<span class="date"> {show.fields.dateFormat}</span>
@@ -72,15 +72,15 @@ export default class Shows extends Component {
 }
 					</div>
 								)}
-							
+
 					    </div>
-					
+
 					  : <div>Ooops, no shows.</div>
 				  : <div class="fixed center loading"><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/05/main-qimg-a9a6c8ccb7c798ff67413118220c7bc3.png" /></div>
 				}
 				<br />
 					<div class="clearfix"></div>
-					
+
 										<div class="tourGraphic">
 							<img src="assets/showsBg/wc-tour-graphic-min.png" style="width:100%;" />
 							</div>
@@ -95,7 +95,7 @@ export default class Shows extends Component {
 
 <div class="clearfix"></div>
 				{showsLoaded
-					? shows.length 
+					? shows.length
 					  ? <div> <br />{shows.map((show, i) =>
 						<div class="dateItem" key={i}>
 						<a href={show.fields.link} target="_blank">

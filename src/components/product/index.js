@@ -37,7 +37,8 @@ const Product = ({ product, onClick }) => (
 {product.title}
 <br />
 <small>
-{ product.attrs.variants[0].available === false
+{
+  product.attrs.variants[0].available === false
   ? <span class="sold">sold out</span>
   : <span class="price"> ${product.variants[0].price}</span>
 }
