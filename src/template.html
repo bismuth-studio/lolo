@@ -7,12 +7,9 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-		<meta name="google-site-verification" content="7B-0o_N_96Y5WSkqD8N72SluCmnomDCKnH9VCQN6BMo" >
+		<meta name="google-site-verification" content="7B-0o_N_96Y5WSkqD8N72SluCmnomDCKnH9VCQN6BMo" />
 		<% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
 			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
-		<% } %>
-		<% if (htmlWebpackPlugin.options.manifest.google_verify { %>
-			<meta name="google-site-verification" content="<%= htmlWebpackPlugin.options.manifest.google_verify %>">
 		<% } %>
 		<% for (var chunk of webpack.chunks) { %>
 		 <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>

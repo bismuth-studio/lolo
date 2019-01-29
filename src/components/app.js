@@ -47,9 +47,12 @@ export default class App extends Component {
 
 			  <Helmet
               htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
-			  title="Home"
-			  titleTemplate="Lolo Zouaï - %s"
-        data-test="test"/>
+      			  title="Home"
+      			  titleTemplate="Lolo Zouaï - %s"
+               meta={[
+                {name: "google-site-verification", content:"7B-0o_N_96Y5WSkqD8N72SluCmnomDCKnH9VCQN6BMo"}
+               ]}
+        />
 
 				<Header url={this.state.currentUrl} goToMerch={this.goToMerch} />
 
