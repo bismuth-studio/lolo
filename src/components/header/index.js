@@ -40,12 +40,13 @@ export default class Header extends Component {
 			<div>
 			{ isShows ?
 				<div>
-					<div class="nav shows-nav " this >
-
+					<div class="nav shows-nav " >
+             
+                    <Link onclick={ e => this.handleClick(e)}  class="left" href="/">shows</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/music">music</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/videos">videos</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/merch">merch</Link>
-					<Link onclick={ e => this.handleClick(e)}  class="left" href="/">shows</Link>
+					
 						<div class="cart" >
 						<CartWrapper url={url} goToMerch={goToMerch} />
 						</div>
@@ -54,11 +55,11 @@ export default class Header extends Component {
 				:
 				<div>
 					<div class="nav no-shows" >
-
+                    <Link onclick={ e => this.handleClick(e)}  class="left" href="/">shows</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/music">music</Link>
 					<Link onclick={ e => this.handleClick(e)} class="left" href="/videos">videos</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/merch">merch</Link>
-					<Link onclick={ e => this.handleClick(e)}  class="left" href="/">shows</Link>
+					
 					<div class="cart" >
 					<CartWrapper url={url} goToMerch={goToMerch} />
 					</div>
