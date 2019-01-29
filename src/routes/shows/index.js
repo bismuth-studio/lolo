@@ -6,8 +6,13 @@ import Helmet from "preact-helmet";
 const PROXY = 'https://coors.now.sh/';
 const PAGES = 'https://lolozouai-auxql-shows-show1.now.sh';
 // const PAGES2 = '/assets/api/shows.json';
-const PAGES2 = 'https://cdn.shopify.com/s/files/1/2994/1228/t/1/assets/airtable.json' + '?374233747237427';
 
+const id =  parseInt(Math.floor(100000 + Math.random() * 900000))
+
+const PAGES2 = 'https://cdn.shopify.com/s/files/1/2994/1228/t/1/assets/airtable.json?' + id ;
+
+
+console.log(id);
 export default class Shows extends Component {
 
 	handleScroll(event) {
@@ -29,6 +34,7 @@ export default class Shows extends Component {
 
 	componentDidMount() {
 		// window.addEventListener('scroll', this.handleScroll);
+
 		axios.get(PAGES2).then(response => {
 			this.setState({shows2: response.data.records || [], shows2Loaded: true})
 			console.log(response);
@@ -49,7 +55,7 @@ export default class Shows extends Component {
 
 
 <div class="cover-img">
-	<img src='assets/showsBg/header2.png' />
+	<img src='assets/showsBg/header4.png' />
 </div>
 
 
@@ -68,9 +74,6 @@ export default class Shows extends Component {
 			</div>
 			<div class="concert-links">
 				<div class="link1">
-						<a href={show.fields.vip_link} target="_blank"></a>
-				</div>
-				<div class="link1">
 				<a href={show.fields.link} target="_blank">Sold Out</a>
 				</div>
 			</div>
@@ -84,9 +87,6 @@ export default class Shows extends Component {
 		<div class="venue">{show.fields.venue} </div>
 	</div>
 	<div class="concert-links">
-		<div class="link1">
-		<a href={show.fields.vip_link} target="_blank">VIP</a>
-</div>
 		<div class="link1">
 		<a href={show.fields.link} target="_blank">Tickets</a>
 		</div>

@@ -1950,7 +1950,7 @@ nav {
   right: 0;
   z-index: 100000;
   left: 0;
-  width: 200px;
+  width: 270px;
   margin: auto;
 }
 
@@ -3308,25 +3308,25 @@ footer {
 
 
 
-div#second a {
+/* div#second a {
   color: black;
 
   text-shadow: 0 0 0;
-}
+} */
 
-div#second a.tix {
+/* div#second a.tix {
   color: #ff9a97;
   text-shadow: 0px 0px 1px #ff9a97;
   font-size: 6px;
-}
+} */
 
-#second .venue {
+/* #second .venue {
   font-style: oblique;
   font-size: 10px;
   font-weight: 100;
-}
+} */
 
-#second span.date {
+/* #second span.date {
   font-weight: 700;
   font-size: 12px;
 }
@@ -3334,7 +3334,7 @@ div#second a.tix {
 #second span.city {
   font-size: 11px;
   font-weight: 300;
-}
+} */
 
 #scroll_down::before {
   -webkit-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
@@ -3501,6 +3501,7 @@ a.btn.btn--cart-checkout {
 
 .cover-img{
   /* height:100vh; */
+  padding-top: 3rem;
   text-align:center;
 }
 
@@ -3513,11 +3514,15 @@ a.btn.btn--cart-checkout {
 
 .entry{
   color:white;
-  font-size:30px;
+  font-size:25px;
   display:flex;
   justify-content:space-between;
   margin-top:30px;
   padding:10px;
+  width: 85%;
+  margin: auto;
+  position: relative;
+  z-index: 200;
 }
 
 .entry div{
@@ -3533,6 +3538,10 @@ a.btn.btn--cart-checkout {
 
 .concert-links a{
   font-size: unset;
+}
+
+.concert-links a:hover, .shows-nav a:hover{
+  color: #6bff6c;
 }
 
 /* .footer-left {
@@ -3556,17 +3565,17 @@ a.btn.btn--cart-checkout {
 
 .show-footer-left{
   position: fixed;
-    top: 572px;
+    top: 54vh;
     left: -190px;
     width: 50vw;
-  z-index:100;
+    z-index:100;
     opacity: 0.7;
 }
 
 .show-footer-right{
   /* position: absolute; */
   /* right: 3vw; */
-  width: 32vw;
+  width: 28vw;
   opacity: 0.7;
   padding-top: 1vw;
   margin-left: auto;
@@ -3577,6 +3586,17 @@ a.btn.btn--cart-checkout {
 
 @media only screen and (max-width: 800px) {
   .entry{
-    font-size: 16px;
+    font-size: 14px;
+    padding: 10px 7px;
+    width: 100%;
+  }
+  .show-footer-left{
+    left: -30vw;
+    width: 94vw;
+  }
+
+  .show-footer-right{
+    padding-bottom: 2rem;
+    width: 60%;
   }
 }

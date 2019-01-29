@@ -13,7 +13,7 @@ import Waypoint from 'preact-waypoint';
 class Song extends Component {
     constructor(props) {
       super(props)
-      
+
       this.state = {
         data: null,
         songs: []
@@ -21,7 +21,7 @@ class Song extends Component {
     }
     componentWillMount() {
       const { song } = this.props
-      
+
       axios.get(`https://auxcorde.fodaco.de/wp-json/wp/v2/video/${song.acf['link_youtube'].ID}`)
        .then(({data}) => this.setState({data}))
     }
@@ -40,13 +40,13 @@ class Song extends Component {
                meta={[
                 {name: "description", content:song.title.rendered },
                 {image: "og:image", content:song.acf.album_art.url }
-          
+
            ]}
 
               // defaultTitle="My Default Title"
               // titleAttributes={{itemprop: "name", lang: "en"}}
               // base={{target: "_blank", href: "http://mysite.com/"}}
-           
+
               // link={[
               //     {rel: "canonical", href: "http://mysite.com/example"},
               //     {rel: "apple-touch-icon", href: "http://mysite.com/img/apple-touch-icon-57x57.png"},
@@ -64,26 +64,26 @@ class Song extends Component {
               // ]}
               // onChangeClientState={(newState) => console.log(newState)}
             />}
-          <h1>{song.title.rendered}</h1> 
+          <h1>{song.title.rendered}</h1>
           <div className="art">  <img src={song.acf.album_art.url} /></div>
             <div className="links">
-            <a target="_blank" href={song.acf.link_apple}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/apple-min.png" /></a> 
-            <a target="_blank" href={song.acf.link_spotify}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/spotify-min.png" /></a> 
-            <a target="_blank" href={song.acf.link_soundcloud}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/soundcloud-min.png" /></a> 
+            <a target="_blank" href={song.acf.link_apple}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/apple-min.png" /></a>
+            <a target="_blank" href={song.acf.link_spotify}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/spotify-min.png" /></a>
+            <a target="_blank" href={song.acf.link_soundcloud}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/soundcloud-min.png" /></a>
             <a target="_blank" href={data.acf.url}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/youtube-min.png" /></a>
-            <a target="_blank" href={song.acf.link_deezer}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/09/deezer-min.png" /></a>  
-            <a target="_blank" href={song.acf.link_pandora}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/09/pandora-min.png" /></a>  
-            <a target="_blank" href={song.acf.link_amazon}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/amazon-min.png" /></a> 
-            <a target="_blank" href={song.acf.link_google}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/google-min.png" /></a> 
-            <a target="_blank" href={song.acf.link_tidal}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/tidal-min.png" /></a>  
-            <a target="_blank" href={song.acf.link_genius}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/04/genius-min.png" /></a>  
-          
+            <a target="_blank" href={song.acf.link_deezer}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/09/deezer-min.png" /></a>
+            <a target="_blank" href={song.acf.link_pandora}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/09/pandora-min.png" /></a>
+            <a target="_blank" href={song.acf.link_amazon}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/amazon-min.png" /></a>
+            <a target="_blank" href={song.acf.link_google}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/google-min.png" /></a>
+            <a target="_blank" href={song.acf.link_tidal}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/01/tidal-min.png" /></a>
+            <a target="_blank" href={song.acf.link_genius}><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/04/genius-min.png" /></a>
+
          </div>
         </div>
       )
     }
   }
-  
+
 export default class MainPage extends Component {
     constructor(props) {
       super(props)
@@ -138,7 +138,7 @@ export default class MainPage extends Component {
 
       return (
         <div>
-          
+
 
           {/* <Header>
               {
@@ -161,13 +161,13 @@ export default class MainPage extends Component {
                     }
                   }}
               />
-              
+
               <Song song={song} isActive={i === current} />
             </Section>
             )
-            
+
           }
-          
+
 
           <div className="btnGroup">
               <button onClick={() => this.scrollTo(current - 1)} disabled={current === 0}>newer</button>
