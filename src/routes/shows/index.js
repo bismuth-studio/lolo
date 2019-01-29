@@ -69,12 +69,12 @@ export default class Shows extends Component {
 			<div class="entry" key={i}>
 			<div class="concert-day">
 				<div class="date">{show.fields.dateFormat}</div>
-				<div class="location">{show.fields.city} , {show.fields.state} </div>
+				<div class="location">{show.fields.city}  {show.fields.state} </div>
 				<div class="venue">{show.fields.venue} </div>
 			</div>
 			<div class="concert-links">
 				<div class="link1">
-				<a href={show.fields.link} target="_blank">Sold Out</a>
+				<a href={show.fields.ticket_link} target="_blank">Sold Out</a>
 				</div>
 			</div>
 		</div>
@@ -83,12 +83,12 @@ export default class Shows extends Component {
 	<div class="entry" key={i}>
 	<div class="concert-day">
 		<div class="date">{show.fields.dateFormat}</div>
-		<div class="location">{show.fields.city} , {show.fields.state} </div>
+		<div class="location">{show.fields.city}  {show.fields.state} </div>
 		<div class="venue">{show.fields.venue} </div>
 	</div>
 	<div class="concert-links">
 		<div class="link1">
-		<a href={show.fields.link} target="_blank">Tickets</a>
+		<a href={show.fields.ticket_link} target="_blank">Tickets</a>
 		</div>
 	</div>
 </div>

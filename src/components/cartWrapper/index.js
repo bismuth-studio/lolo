@@ -84,7 +84,7 @@ class CartWrapper extends Component {
     window.history.pushState({}, 'LZ Shop - cart', '/cart')
   }
 
-  
+
 
   render({  }, { cart, showCart }) {
     console.log(cart);

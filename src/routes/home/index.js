@@ -37,6 +37,7 @@ class Song extends Component {
               htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
               title={song.title.rendered}
                titleTemplate="Lolo Zouaï - %s"
+  
                meta={[
                 {name: "description", content:song.title.rendered },
                 {image: "og:image", content:song.acf.album_art.url }

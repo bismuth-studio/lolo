@@ -31,7 +31,7 @@ export const shopClient = ShopifyBuy.buildClient({
 
 export default class App extends Component {
 	state = {
-		currentUrl: window.location.href
+		currentUrl: ''
 	}
 
 	goToMerch = () => route('/merch', true);
@@ -44,19 +44,20 @@ export default class App extends Component {
 	render() {
 		return (
 			<div id="app">
-			
+
 			  <Helmet
               htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
 			  title="Home"
-			  titleTemplate="Lolo Zouaï - %s" />
+			  titleTemplate="Lolo Zouaï - %s"
+        data-test="test"/>
 
 				<Header url={this.state.currentUrl} goToMerch={this.goToMerch} />
 
 				<Router onChange={this.handleRoute}>
 
-					<Home path="/" />
+					<Home path="/music" />
 
-					<Shows path="/shows" />
+					<Shows path="/" />
 
 					<Merch path="/merch"  key="product" />
 					<MerchItem key="variant" path="/merch/:handle" />
