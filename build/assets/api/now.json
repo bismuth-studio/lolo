@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "scripts": {
+    "now-build": "if-env NODE_ENV=production && npm run serve build -s || npm run -s dev"
+  },
+  "forwardNpm": true
+}

@@ -12,10 +12,11 @@ export default class Header extends Component {
 		return (
 			<div>
 				<div class="nav" >
-			
+
 					<Link  class="left" href="/">music</Link>
 					<Link  class="left" href="/videos">videos</Link>
 					<Link  class="left" href="/merch">merch</Link>
+					<Link  class="left" href="/shows">shows</Link>
 				<div class="cart" >
 					<CartWrapper url={url} goToMerch={goToMerch} />
 				</div>
