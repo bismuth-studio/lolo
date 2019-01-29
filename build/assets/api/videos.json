@@ -1,0 +1,58 @@
+{
+  "records": [{
+    "id": "recDH3Htz4J8FaIhT",
+    "fields": {
+      "id": "1",
+      "title": "Blue",
+      "link": "https://www.youtube.com/watch?v=gLWQyntxh54",
+      "type": "musicVideo",
+      "release": "2018-05-25",
+      "show": true,
+      "slug": "blue",
+      "yt_id": "gLWQyntxh54"
+    },
+    "createdTime": "2018-05-25T05:12:13.000Z"
+  }, {
+    "id": "recb2mBnLHfwiv4wp",
+    "fields": {
+      "id": "2",
+      "title": "Brooklyn Love",
+      "link": "https://www.youtube.com/watch?v=0SIUkduV7ww",
+      "type": "musicVideo",
+      "release": "2018-04-18",
+      "show": true,
+      "slug": "brooklyn-love",
+      "yt_id": "0SIUkduV7ww"
+    },
+    "createdTime": "2018-05-25T05:12:13.000Z"
+  },
+  {
+    "id": "recbdjIgdqZldBLAS",
+    "fields": {
+      "id": "3",
+      "title": "High Highs to Low Lows",
+      "link": "https://www.youtube.com/watch?v=nZG5SOkvIEM",
+      "type": "musicVideo",
+      "release": "2017-12-22",
+      "show": true,
+      "slug": "high-highs-to-low-lows",
+      "yt_id": "nZG5SOkvIEM"
+    },
+    "createdTime": "2018-05-25T05:12:13.000Z"
+  },
+  {
+    "id": "recWpvuTxTjeERIuW",
+    "fields": {
+      "id": "9",
+      "title": "So Real",
+      "link": "https://www.youtube.com/watch?v=KZFNF_FZ7lM",
+      "type": "musicVideo",
+      "release": "2016-10-18",
+      "show": true,
+      "slug": "so-real",
+      "yt_id": "KZFNF_FZ7lM"
+    },
+    "createdTime": "2018-05-25T05:12:13.000Z"
+  }
+]
+}
