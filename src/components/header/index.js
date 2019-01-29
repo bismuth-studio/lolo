@@ -11,16 +11,32 @@ export default class Header extends Component {
 		const isShows = url.includes('shows')
 		return (
 			<div>
+			{ isShows ?
+				<div class="nav shows-nav" >
+
+				<Link  class="left" href="/">music</Link>
+				<Link  class="left" href="/videos">videos</Link>
+				<Link  class="left" href="/merch">merch</Link>
+				<Link  class="left" href="/shows">shows</Link>
+				<div class="cart" >
+				<CartWrapper url={url} goToMerch={goToMerch} />
+				</div>
+				</div>
+
+				:
+
 				<div class="nav" >
 
-					<Link  class="left" href="/">music</Link>
-					<Link  class="left" href="/videos">videos</Link>
-					<Link  class="left" href="/merch">merch</Link>
-					<Link  class="left" href="/shows">shows</Link>
+				<Link  class="left" href="/">music</Link>
+				<Link  class="left" href="/videos">videos</Link>
+				<Link  class="left" href="/merch">merch</Link>
+				<Link  class="left" href="/shows">shows</Link>
 				<div class="cart" >
-					<CartWrapper url={url} goToMerch={goToMerch} />
+				<CartWrapper url={url} goToMerch={goToMerch} />
 				</div>
 				</div>
+
+			 }
 				<footer>
               <a href="https://twitter.com/lolozouai" target="_blank">twitter</a>
               <a href="https://instagram.com/lolozouai" target="_blank">instagram</a>
