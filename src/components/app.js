@@ -61,6 +61,7 @@ export default class App extends Component {
 					<Home path="/music" />
 
 					<Shows path="/" />
+          <Shows path="/shows" />
 
 					<Merch path="/merch"  key="product" />
 					<MerchItem key="variant" path="/merch/:handle" />
