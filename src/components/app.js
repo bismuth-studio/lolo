@@ -50,7 +50,7 @@ export default class App extends Component {
       			  title="Home"
       			  titleTemplate="Lolo Zouaï - %s"
                meta={[
-                {name: "google-site-verification", content:"7B-0o_N_96Y5WSkqD8N72SluCmnomDCKnH9VCQN6BMo"}
+                {name: "bismuth-site-verification", content:"Qwv01Gc-f4AxdtJPccPFdeRFrTAvKBk3xcFqeGs88KU"}
                ]}
         />
 
@@ -61,6 +61,7 @@ export default class App extends Component {
 					<Home path="/music" />
 
 					<Shows path="/" />
+          <Shows path="/shows" />
 
 					<Merch path="/merch"  key="product" />
 					<MerchItem key="variant" path="/merch/:handle" />

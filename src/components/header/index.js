@@ -15,7 +15,7 @@ export default class Header extends Component {
 	}
 
 	componentDidMount(){
-		if (window.location.pathname == '/') {
+		if (window.location.pathname == '/' || window.location.pathname == '/shows') {
 			this.setState({showCheck: true})
 		}
 		if (this.props.url.includes('shows')) {
@@ -41,12 +41,12 @@ export default class Header extends Component {
 			{ isShows ?
 				<div>
 					<div class="nav shows-nav " >
-             
-                    <Link onclick={ e => this.handleClick(e)}  class="left" href="/">shows</Link>
+
+          <Link onclick={ e => this.handleClick(e)}  class="left" href="/shows">shows</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/music">music</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/videos">videos</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/merch">merch</Link>
-					
+
 						<div class="cart" >
 						<CartWrapper url={url} goToMerch={goToMerch} />
 						</div>
@@ -55,11 +55,11 @@ export default class Header extends Component {
 				:
 				<div>
 					<div class="nav no-shows" >
-                    <Link onclick={ e => this.handleClick(e)}  class="left" href="/">shows</Link>
+          <Link onclick={ e => this.handleClick(e)}  class="left" href="/shows">shows</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/music">music</Link>
 					<Link onclick={ e => this.handleClick(e)} class="left" href="/videos">videos</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/merch">merch</Link>
-					
+
 					<div class="cart" >
 					<CartWrapper url={url} goToMerch={goToMerch} />
 					</div>

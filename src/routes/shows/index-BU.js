@@ -66,7 +66,7 @@ export default class Shows extends Component {
 	<a href={show.fields.link} target="_blank">
 	<span class="date"> {show.fields.dateFormat}</span>
 	<span class="city"> {show.fields.city} , {show.fields.state} </span>
-	<a class="tix" href={show.fields.link} target="_blank">tickets</a>
+	<a class="tix" href={show.fields.link} target="_blank">tickets & VIPs</a>
 	<br />
 	<div class="venue">{show.fields.venue} </div>
 	</a></div>  </div>
