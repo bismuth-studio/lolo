@@ -3582,14 +3582,34 @@ a.btn.btn--cart-checkout {
   display: block;
 }
 
+.link1 {
+    min-width: 100px;
+    text-align: center;
+}
 
 
 @media only screen and (max-width: 800px) {
+
+  .wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0px 3px;
+}
   .entry{
     font-size: 14px;
     padding: 10px 7px;
     width: 100%;
   }
+
+  .concert-day {
+    width: 246px;
+  }
+
+  .link1 {
+    width: 100px;
+        text-align: left;
+}
+
   .show-footer-left{
     left: -30vw;
     width: 94vw;

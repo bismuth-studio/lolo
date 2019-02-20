@@ -88,7 +88,7 @@ export default class Shows extends Component {
 	</div>
 	<div class="concert-links">
 		<div class="link1">
-		<a href={show.fields.ticket_link} target="_blank">Tickets</a>
+		<a href={show.fields.ticket_link} target="_blank">Tickets & VIPs</a>
 		</div>
 	</div>
 </div>
