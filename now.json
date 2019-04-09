@@ -1,0 +1,14 @@
+{
+   "version": 2,
+   "name": "loloV2",
+   "builds": [
+       {"src": "package.json", "use": "@now/static-build", "config": { "distDir": "build" }}
+   ],
+   "routes": [
+       { "src": "^/sw.js$", "dest": "/404" },
+       { "src": "^/assets/(.*)", "dest": "/assets/$1" },
+       { "src": "^/(.*)\\.(.*)\\.(js|css|json)$", "headers": {"cache-control": "Immutable"}, "dest": "/$1.$2.$3" },
+       { "src": "^/(.*)\\.(js|css|json)$", "dest": "/$1.$2" },
+       { "src": "^/(.*)", "headers": {"cache-control": "s-maxage=86400"}, "dest": "/index.html" }
+   ]
+}

@@ -114,7 +114,8 @@ export default class MainPage extends Component {
         });
         // initial scroll
         this.scrollTo(index)
-
+        console.log("!!!")
+        console.log(res.data)
         this.setState({songs: res.data})
       })
     }
