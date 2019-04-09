@@ -114,7 +114,6 @@ export default class MainPage extends Component {
         });
         // initial scroll
         this.scrollTo(index)
-        console.log("!!!")
         console.log(res.data)
         this.setState({songs: res.data})
       })
@@ -152,7 +151,7 @@ export default class MainPage extends Component {
           </Header> */}
 
           {songs.map((song, i) =>
-            <Section key={i} className="custom-section" verticalAlign="true" color={song.acf.background_color} title={song.title.rendered.toLowerCase()}>
+            <Section key={i} className="custom-section" verticalAlign="true" color={song.acf.background_color} background_image={song.acf.background_image.url} title={song.title.rendered.toLowerCase()}>
               <Waypoint
                 key={i}
                   onEnter={() => {
@@ -205,7 +204,9 @@ class Section extends React.Component {
   }
 
   render() {
+
     const alignVertical = this.props.verticalAlign || this.context.verticalAlign;
+    const backgroundContent = this.props.background_image ? `url(${this.props.background_image})` : this.props.color;
 
     const sectionStyle = {
       width: '100%',
@@ -215,7 +216,7 @@ class Section extends React.Component {
       overflow: 'auto',
       autoScrolling:'false',
       scrollBar:'false',
-      backgroundColor: this.props.color,
+      background: backgroundContent,
       paddingTop: this.context.sectionPaddingTop,
       paddingBottom: this.context.sectionPaddingBottom,
     };
