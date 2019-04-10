@@ -39,9 +39,6 @@ export default class songNav extends Component {
 
 		  this.setState({songs: res.data})
 
-			console.log("yo");
-
-
 		})
 
 		shopClient.fetchQueryProducts({collection_id: 60022554666, sort_by: ['manual']}).then((products) => {
