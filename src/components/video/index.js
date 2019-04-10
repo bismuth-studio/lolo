@@ -46,10 +46,10 @@ export default class Videos extends Component {
 							{shows.filter(video => video.acf.type === "official").map((video, i) =>
 							<div class="col-4 p1 left">
 								<div dangerouslySetInnerHTML={{ __html: video.title.rendered }} />
-						
+
 					  	  <Link class="videoOverlay" href={`/video/${video.acf.slug}`} key={i}>
 					  	  <img src={`https://img.youtube.com/vi/${video.acf.id}/maxresdefault.jpg`} />
-								
+
 								</Link>
 								</div>
 						    )}
@@ -57,7 +57,7 @@ export default class Videos extends Component {
 					  : <div>Ooops, no videos.</div>
 				  : <div class="loading"></div>
 				}
-	
+
 			</div>
 		);
 	}

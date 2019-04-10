@@ -15,6 +15,8 @@ import Shows from '../routes/shows';
 import Video from '../routes/video';
 import Videos from '../routes/videos';
 
+import PixelWrapper from './pixel-wrapper'
+
 // -- *3rdparty
 
 import ShopifyBuy from 'shopify-buy'
@@ -70,6 +72,7 @@ export default class App extends Component {
 					<Video path="/video/:id" />
 
 				</Router>
+        < PixelWrapper />
 			</div>
 		);
 	}
