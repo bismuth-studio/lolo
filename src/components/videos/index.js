@@ -19,7 +19,7 @@ export default class Videos extends Component {
   componentWillUnmount() {
     clearInterval(this.timer);
 	}
-	
+
 
   socet = () => {
 		axios.get(PAGES)
@@ -32,7 +32,7 @@ export default class Videos extends Component {
 
 	render({ }, { shows, showsLoaded }) {
 		return (
-			<div class="videos">
+			<div class="videos bisumuth"  style={`background:url('assets/showsBg/lowhighbg.jpg')`}>
 				{showsLoaded
 					? shows.length
 					  ? <div >
@@ -43,7 +43,7 @@ export default class Videos extends Component {
 							{shows.filter(video => video.acf.type === "official").map((video, i) =>
 							<div class="col-4 p1 left">
 						<h3>		<div dangerouslySetInnerHTML={{ __html: video.title.rendered }} />		</h3>
-					  	  <Link class="videoOverlay" href={`/video/${video.acf.video_slug}`} key={video.acf.id}>
+					  	  <Link class="videoOverlay" style={`background:url('assets/showsBg/lowhighbg.jpg')`} href={`/video/${video.acf.video_slug}`} key={video.acf.id}>
 					  	  <img src={`https://img.youtube.com/vi/${video.acf.id}/maxresdefault.jpg`} />
 								</Link>
 								</div>
@@ -52,7 +52,7 @@ export default class Videos extends Component {
 					  : <div>Ooops, no videos.</div>
 				  : 	<div class="fixed center loading"><img src="https://auxcorde.fodaco.de/wp-content/uploads/2018/05/main-qimg-a9a6c8ccb7c798ff67413118220c7bc3.png" /></div>
 				}
-	
+
 			</div>
 		);
 	}

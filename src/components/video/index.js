@@ -33,7 +33,7 @@ export default class Videos extends Component {
 
 	render({ }, { shows, showsLoaded }) {
 		return (
-			<div class="videos">
+			<div class="videos"  >
 
 
 				{showsLoaded
