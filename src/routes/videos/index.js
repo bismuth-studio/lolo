@@ -7,9 +7,11 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div class="video" >
-		<Videos />
+					<div class="lolo-tv-wrapper">
+					<img class="lolo-tv" src="assets/loloTV.png" />
+					</div>
 
-
+				<Videos />
 			</div>
 		);
 	}

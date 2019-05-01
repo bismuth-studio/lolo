@@ -1024,6 +1024,20 @@ span.price {
   background-repeat: no-repeat;
 }
 
+
+.lolo-tv-wrapper{
+  width: 100%;
+  display: flex;
+  margin-top: 4rem;
+  background:url('/assets/Red_Texture.jpg');
+  padding-bottom: 1rem;
+}
+
+.lolo-tv{
+  margin: auto;
+  width: 100px;
+}
+
 .videos img {
   width: 100%;
 }
@@ -1095,7 +1109,7 @@ span.price {
   width: 60% !important;
 
   margin:auto;
-    margin-top:7vh;
+    margin-top:0vh;
 }
 
 .video .videos .col-4 {
@@ -3134,7 +3148,15 @@ text-align:center;
 .video .videos {
   width: 90% !important;
   margin: auto;
-  margin-top: 7vh;
+  margin-top: 0vh;
+}
+
+.lolo-tv-wrapper{
+  margin-top: 3rem;
+}
+
+.lolo-tv{
+  width: 80px;
 }
 
 /* a.tix {

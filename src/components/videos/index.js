@@ -33,6 +33,7 @@ export default class Videos extends Component {
 	render({ }, { shows, showsLoaded }) {
 		return (
 			<div class="videos bisumuth"  style={`background:url('assets/showsBg/lowhighbg.jpg')`}>
+
 				{showsLoaded
 					? shows.length
 					  ? <div >
@@ -40,6 +41,7 @@ export default class Videos extends Component {
    htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
 	 title="Videos"
 		titleTemplate="Lolo Zouaï - %s" />
+
 							{shows.filter(video => video.acf.type === "official").map((video, i) =>
 							<div class="col-4 p1 left">
 						<h3>		<div dangerouslySetInnerHTML={{ __html: video.title.rendered }} />		</h3>
