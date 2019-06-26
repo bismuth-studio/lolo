@@ -62,7 +62,7 @@ export default class App extends Component {
 
 					<Home path="/music" />
 
-					<Shows path="/" />
+					<Home path="/" />
           <Shows path="/shows" />
 
 					<Merch path="/merch"  key="product" />

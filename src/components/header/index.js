@@ -15,7 +15,7 @@ export default class Header extends Component {
 	}
 
 	componentDidMount(){
-		if (window.location.pathname == '/' || window.location.pathname == '/shows') {
+		if (window.location.pathname == '/shows' || window.location.pathname == '/shows') {
 			this.setState({showCheck: true})
 		}
 		if (this.props.url.includes('shows')) {
@@ -42,7 +42,8 @@ export default class Header extends Component {
 				<div>
 					<div class="nav shows-nav " >
 
-          <Link onclick={ e => this.handleClick(e)}  class="left" href="/shows">shows</Link>
+          {/* <Link onclick={ e => this.handleClick(e)}  class="left" href="/shows">shows</Link> */}
+					<Link onclick={ e => this.handleClick(e)}  class="left" href="https://highhighstolowlows.com#tour">shows</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/music">music</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/videos">videos</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/merch">merch</Link>
