@@ -2,19 +2,13 @@ import { h, Component } from 'preact';
 import { Router, route } from 'preact-router';
 
 // -- ./componenets
-
 import Header from './header';
-
 import Home from '../routes/home';
-
 import Merch from '../routes/merch';
 import MerchItem from '../routes/merch-item';
-
 import Shows from '../routes/shows';
-
 import Video from '../routes/video';
 import Videos from '../routes/videos';
-
 import PixelWrapper from './pixel-wrapper'
 
 // -- *3rdparty
@@ -54,7 +48,12 @@ export default class App extends Component {
                meta={[
                 {name: "bismuth-site-verification", content:"Qwv01Gc-f4AxdtJPccPFdeRFrTAvKBk3xcFqeGs88KU"}
                ]}
+               link={[
+                    {rel: "icon", sizes: "32x32", href: "../assets/icons/favicon-32x32.png"}
+                ]}
+
         />
+
 
 				<Header url={this.state.currentUrl} goToMerch={this.goToMerch} />
 
