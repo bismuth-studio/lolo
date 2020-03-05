@@ -6,7 +6,7 @@ import Helmet from "preact-helmet";
 const PROXY = 'https://coors.now.sh/';
 const PAGES = 'https://lolozouai-auxql-shows-show1.now.sh';
 // const PAGES2 = '/assets/api/shows.json';
-const PAGES2 = 'https://cdn.shopify.com/s/files/1/2994/1228/t/1/assets/airtable.json';
+const PAGES2 = 'https://2020-dates.now.sh/data.json';
 
 export default class Shows extends Component {
 

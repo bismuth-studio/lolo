@@ -9,7 +9,7 @@ const PAGES = 'https://lolozouai-auxql-shows-show1.now.sh';
 
 const id =  parseInt(Math.floor(100000 + Math.random() * 900000))
 
-const PAGES2 = 'https://cdn.shopify.com/s/files/1/2994/1228/t/1/assets/airtable.json?' + id ;
+const PAGES2 = 'https://2020-dates.now.sh/data.json' + id ;
 
 
 console.log(id);
