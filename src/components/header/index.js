@@ -43,7 +43,7 @@ export default class Header extends Component {
 					<div class="nav shows-nav " >
 
           {/* <Link onclick={ e => this.handleClick(e)}  class="left" href="/shows">shows</Link> */}
-					<Link onclick={ e => this.handleClick(e)}  class="left" href="/shows">shows</Link>
+					<Link onclick={ e => this.handleClick(e)}  class="left" href="https://www.songkick.com/artists/9465904-lolo-zouai">shows</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/music">music</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="/videos">videos</Link>
 					<Link onclick={ e => this.handleClick(e)}  class="left" href="https://lolozouai.myshopify.com/">merch</Link>
