@@ -7,7 +7,7 @@ const PROXY = 'https://coors.now.sh/';
 const PAGES = 'https://lolozouai-auxql-shows-show1.now.sh';
 // const PAGES2 = '/assets/api/shows.json';
 const id =  parseInt(Math.floor(100000 + Math.random() * 900000))
-const PAGES2 = 'https://2020-dates.now.sh/data.json' ;
+const PAGES2 = 'https://lolozouai.now.sh/data.json' ;  //this is the one important .json link
 
 console.log(id);
 export default class Shows extends Component {
@@ -51,7 +51,10 @@ export default class Shows extends Component {
 
 						<div class="cover-img ">
 							<div class="grid-2 intro-text">
+								<div>
 								<h1 class="text-left">Lolo Zouaï</h1>
+								<h1 class="text-left">2021</h1>
+								</div>
 								<div>
 									<h1 class="text-right">EUROPEAN ARENA TOUR</h1>
 									<h1 class="text-right">WITH DUA LIPA</h1>
@@ -59,6 +62,7 @@ export default class Shows extends Component {
 							</div>
 							<img src='assets/showsBg/lolobg-001.png' />
 						</div>
+						<br/>
 
 
 						<div class="clearfix"></div>
@@ -113,7 +117,7 @@ export default class Shows extends Component {
 									}
 									<br />
 									<div class="clearfix"></div>
-									
+
 
 				</div>
 				</div>

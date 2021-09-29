@@ -30,7 +30,10 @@ export default class App extends Component {
 		currentUrl: ''
 	}
 
-	goToMerch = () => route('/merch', true);
+	goToMerch = () => {
+    return route('https://lolozouai.myshopify.com/', true)
+    console.log("TEST")
+  }
 	/** Gets fired when the route changes.
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
